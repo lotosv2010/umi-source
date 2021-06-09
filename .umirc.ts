@@ -9,8 +9,8 @@ export default defineConfig({
       path: '/',
       component: '@/layouts/index',
       routes: [
-        { path: '/', component: '@/pages/index' },
-        { path: '/profile', component: '@/pages/profile' },
+        { path: '/', component: '@/pages/home/' },
+        { path: '/profile', component: '@/pages/profile/' },
       ],
     },
   ],
