@@ -9,6 +9,7 @@ const Layout = (props: any) => {
       <header className={style.header}>
         <p style={{ display: 'flex', justifyContent: 'space-around' }}>
           <Link to="/">首页</Link>
+          <Link to="/user">用户</Link>
           <Link to="/profile">个人中心</Link>
         </p>
       </header>
