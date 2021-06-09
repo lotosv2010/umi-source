@@ -5,6 +5,7 @@ export default defineConfig({
     type: 'none',
   },
   routes: [
+    { path: '/login', component: '@/pages/login/' },
     {
       path: '/',
       component: '@/layouts/index',
@@ -19,7 +20,11 @@ export default defineConfig({
             { path: '/user/detail/:id', component: '@/pages/user/detail/' },
           ],
         },
-        { path: '/profile', component: '@/pages/profile/' },
+        {
+          path: '/profile',
+          component: '@/pages/profile/',
+          wrappers: ['@/wrappers/auth'],
+        },
       ],
     },
   ],
