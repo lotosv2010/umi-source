@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'umi';
 import users from '../../../data/users';
 
-const UserList = () => {
+const UserList = (props: any) => {
+  console.log('user list props', props);
   return (
     <div>
       <h2>User List</h2>
