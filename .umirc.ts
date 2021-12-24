@@ -1,8 +1,13 @@
 import { defineConfig } from 'umi';
 
 export default defineConfig({
+  layout: {},
   nodeModulesTransform: {
     type: 'none',
+  },
+  hash: true,
+  history: {
+    type: 'browser',
   },
   routes: [
     { path: '/login', component: '@/pages/login/' },
