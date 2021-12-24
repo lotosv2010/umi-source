@@ -18,7 +18,7 @@ export default defineConfig({
         { path: '/', component: '@/pages/home/' },
         {
           path: '/user',
-          component: '@/pages/user/',
+          // component: '@/pages/user/',
           routes: [
             { path: '/user', component: '@/pages/user/list/' },
             { path: '/user/add', component: '@/pages/user/add/' },
@@ -30,8 +30,10 @@ export default defineConfig({
           component: '@/pages/profile/',
           wrappers: ['@/wrappers/auth'],
         },
+        { component: './404' },
       ],
     },
+    { component: './404' },
   ],
   fastRefresh: {},
 });

@@ -34,8 +34,10 @@ export function render(oldRender: Function) {
 export function onRouteChange({ matchedRoutes }: Record<string, any>) {
   const len = matchedRoutes.length;
   if (len) {
-    const path = matchedRoutes[len - 1].route.path.slice(1);
-    document.title = path || 'home';
+    console.log(matchedRoutes);
+    const route = matchedRoutes[len - 1]?.route;
+    const title = route?.title || route?.path?.slice(1);
+    document.title = title || 'home';
   }
 }
 
