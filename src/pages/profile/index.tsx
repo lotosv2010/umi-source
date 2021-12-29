@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './index.less';
+import styles from './index.scss';
 
 // todo 这是一个路由组件，此组件是由路由渲染出来的
 function ProfilePage(props: any) {
@@ -9,7 +9,8 @@ function ProfilePage(props: any) {
     history.push('/login');
   };
   return (
-    <div>
+    <div className={styles.main}>
+      <img src={require('@/assets/umi.png')} />
       <h1 className={styles.title}>个人中心</h1>
       <p>
         <button onClick={() => history.goBack()}>返回</button>
