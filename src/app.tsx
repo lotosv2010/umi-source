@@ -15,7 +15,7 @@ export function modifyClientRenderOpts(memo: any) {
 let extraRoutes: Record<string, any>;
 export function patchRoutes({ routes }: Record<string, any>) {
   console.log(routes);
-  routes.unshift(extraRoutes);
+  // routes.unshift(extraRoutes);
 }
 
 // render

@@ -10,15 +10,31 @@ export default defineConfig({
     type: 'browser',
   },
   dynamicImport: {},
-  chainWebpack(config) {
-    config.optimization.splitChunks({
-      cacheGroups: {
-        styles: {
-          name: 'styles',
-          test: /\.(css|less|scss)$/,
-          chunks: 'async',
-          minChunks: 1,
-          minSize: 0,
+  // chunks: ['vendors', 'umi'],
+  chainWebpack: function (config: any, { webpack }: any) {
+    config.merge({
+      optimization: {
+        splitChunks: {
+          chunks: 'all',
+          minSize: 30000,
+          minChunks: 3,
+          automaticNameDelimiter: '.',
+          cacheGroups: {
+            vendor: {
+              name: 'vendors',
+              test({ resource }: any) {
+                return /[\\/]node_modules[\\/]/.test(resource);
+              },
+              priority: 10,
+            },
+            styles: {
+              name: 'styles',
+              test: /\.(css|less|scss)$/,
+              chunks: 'async',
+              minChunks: 1,
+              minSize: 0,
+            },
+          },
         },
       },
     });
@@ -44,6 +60,8 @@ export default defineConfig({
           component: '@/pages/profile/',
           wrappers: ['@/wrappers/auth'],
         },
+        { path: '/foo', component: '@/pages/foo/' },
+        { path: '/bar', component: '@/pages/bar/' },
         { component: './404' },
       ],
     },

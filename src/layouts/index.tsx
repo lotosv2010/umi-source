@@ -10,6 +10,8 @@ const Layout = (props: any) => {
         <p style={{ display: 'flex', justifyContent: 'space-around' }}>
           <Link to="/">首页</Link>
           <Link to="/user">用户</Link>
+          <Link to="/foo">foo</Link>
+          <Link to="/bar">bar</Link>
           <Link to="/profile">个人中心</Link>
         </p>
       </header>
