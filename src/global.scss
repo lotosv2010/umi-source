@@ -1,0 +1,8 @@
+body {
+  font-size: 14px;
+  color: darkgray;
+  .ant-select-selection {
+    max-height: 51px;
+    overflow: auto;
+  }
+}

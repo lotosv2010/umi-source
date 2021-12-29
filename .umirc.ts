@@ -9,6 +9,20 @@ export default defineConfig({
   history: {
     type: 'browser',
   },
+  dynamicImport: {},
+  chainWebpack(config) {
+    config.optimization.splitChunks({
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.(css|less|scss)$/,
+          chunks: 'async',
+          minChunks: 1,
+          minSize: 0,
+        },
+      },
+    });
+  },
   routes: [
     { path: '/login', component: '@/pages/login/' },
     {
@@ -35,5 +49,6 @@ export default defineConfig({
     },
     { component: './404' },
   ],
+  sass: {},
   fastRefresh: {},
 });

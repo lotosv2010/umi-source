@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import styles from './index.less';
+// todo: 问题 Cannot find module './index.scss' or its corresponding type declarations
+// todo: 解决方案 typings.d.ts 文件中添加 declare module '*.scss';
+import styles from './index.scss';
 import { List, Avatar } from 'antd';
 
 function IndexPage() {
