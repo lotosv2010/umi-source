@@ -68,5 +68,6 @@ export default defineConfig({
     { component: './404' },
   ],
   sass: {},
+  // 快速刷新
   fastRefresh: {},
 });
